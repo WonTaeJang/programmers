@@ -45,3 +45,9 @@ function solution(id_list, report, k) {
 }
 
 solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"], 2);
+
+/*
+채점 결과
+정확성: 20.8
+합계: 20.8 / 100.0
+*/
