@@ -1,53 +1,44 @@
 function solution(id_list, report, k) {
-    var answer = []
-    var answer_list = {}
-    var list = {};
-    // 정지 기준이 되는 횟수로 k값이 넘어서야 id_list에 결과메일을 받을 수 있음.
-    
-    // id list를 object list로 변경
-    let cnt = 0;
-    id_list.forEach((e)=>{
-        answer_list[e] = {id:cnt++, count:0};
+    let reports = [...new Set(report)].map(a=>{return a.split(' ')});
+    console.log(reports);
+
+
+    var answer = new Array(id_list.length);
+    answer.fill(0);
+    const report_list = {};
+
+    id_list.forEach(report_id => {
+        // 신고 받은 유저
+        report_list[report_id] = [];
+    });
+
+    report.forEach(user => {
+        let [user_id, report_id] = user.split(' ');
+
+        if (!report_list[report_id].includes(user_id))
+            report_list[report_id].push(user_id);
     })
 
-    // 신고된 ID를 기준으로 object arr를 만든다. 
-    for(let i=0; i<report.length; i++){
-        let [rPorter, rPorted] = report[i].split(' ');
-
-        if(list.hasOwnProperty(rPorted))
-        {
-            list[rPorted].add(rPorter);
-        }
-        else
-        {
-            let reporter = new Set()
-            reporter.add(rPorter);
-            list[rPorted] = reporter;
-        }
-    }
-
-    //k값을 기준으로 true false 판단
-    for(value in list){
-        //console.log(list[value]);
-        if(list[value].size == k){
-            list[value].forEach(e=>{
-                answer_list[e].count++;
+    for (data in report_list) {
+        if (report_list[data].length >= k) {
+            report_list[data].forEach(value => {
+                answer[id_list.indexOf(value)] += 1;
             })
         }
     }
 
-    // 결과값 대입
-    for(value in answer_list){
-        answer[answer_list[value].id] = answer_list[value].count;
-    }
+
+   // console.log(answer)
+
+
 
     return answer;
 }
 
-solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"], 2);
+solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"], 2);
 
 /*
 채점 결과
-정확성: 20.8
-합계: 20.8 / 100.0
+정확성: 100.0
+합계: 100.0 / 100.0
 */
