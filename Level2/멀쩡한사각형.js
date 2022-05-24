@@ -13,7 +13,7 @@ function solution(w, h) {
     let min = Math.min(w,h);
 
     let g = gcd(max,min);
-    console.log(g);
+    //console.log(g);
     return w*h-(w+h-g);
 }
 
