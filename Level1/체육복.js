@@ -1,6 +1,7 @@
 function solution(n, lost, reserve) {
     var answer = 0;
     let student = new Array(n);
+    let list = [];
     let lendCount = 0;
     student.fill(0);
 
@@ -12,16 +13,17 @@ function solution(n, lost, reserve) {
     reserve.sort();
 
 
-    reserve = reserve.map(e=>{
+    reserve.map(e=>{
         if(student[e-1] == -1){
             student[e-1] = 0;
             lendCount++;
         }
+        else{
+            list.push(e);
+        }
     })
 
-    console.log(reserve);
-
-    reserve.map(e => {
+    list.map(e => {
         if(student[e-2] == -1){
             student[e-2] = 0;
             lendCount++;

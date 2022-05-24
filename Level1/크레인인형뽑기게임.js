@@ -34,13 +34,10 @@ function solution(board, moves) {
         }
     })
     
-
-
-
     //console.log(height, width);
-    console.log(board);
-    console.log(stack);
-    console.log(count);
+    // console.log(board);
+    // console.log(stack);
+    // console.log(count);
     return count;
 }
 
