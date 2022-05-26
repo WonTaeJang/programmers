@@ -1,11 +1,12 @@
 function solution(s) {
     var answer = true;
-
-    let regex = 
-
+    if(s.length == 4 || s.length == 6){
+        s.replace(/[0-9]/g,'') == '' ? answer=true : answer = false;
+    }
+    else{
+        answer = false;
+    }
     
-
-    console.log(s.replace(/[0-9]/g,''));
 
     return answer;
 }
