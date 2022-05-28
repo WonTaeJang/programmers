@@ -26,7 +26,7 @@ function solution(N, stages) {
     for(value of failRate2){
         answer.push(value.id+1);
     }
-    console.log(answer)
+    //console.log(answer)
     return answer;
 }
 
