@@ -1,7 +1,5 @@
 function solution(nums) {
-    var answer = -1;
-    let isUsed = new Array(nums.length);
-    isUsed.fill(false);
+    let len = nums.length;
     let primeCnt = 0;
     
     const isPrime = (number) => {
@@ -13,23 +11,19 @@ function solution(nums) {
         return true;
     }
     
-    (function sumPrime(arr, depth){
-        if(depth > 0){
-
+    for(let i=0; i<len; i++){
+        for(let j=i+1; j<len; j++){
+            for(let k=j+1; k<len; k++){
+                let sum = nums[i] + nums[j] + nums[k];
+                if(isPrime(sum)){
+                    primeCnt++
+                }
+            }
         }
+    }
 
-        if(arr.length == 3) return;
-
-        for(let i=0; i<arr.length-2; i++){
-
-        }
-    })(nums,0);
-
-
-    // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-    console.log('Hello Javascript')
     
-    return answer;
+    return primeCnt;
 }
 
 solution([1,2,3,4]) // 1
