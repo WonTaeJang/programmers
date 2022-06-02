@@ -7,8 +7,8 @@ function solution(numbers) {
     // "303" "330" 문자를 합쳐서 비교한다. 
     answer = arr.sort((a,b) => (b+a)-(a+b)).join('')
 
-    console.log(arr);
-    console.log(answer);
+    // console.log(arr);
+    // console.log(answer);
 
     return answer[0]==='0'? '0' : answer;
 }
