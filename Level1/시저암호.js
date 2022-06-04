@@ -15,7 +15,7 @@ function solution(s, n) {
 
     }
     
-    console.log(answer)
+    //console.log(answer)
         
     return answer;
 }
