@@ -11,7 +11,7 @@ function solution(s){
             default:
         }
     }
-    console.log(list)
+    //console.log(list)
 
     return list[0] == list[1]? true:false;
 }
