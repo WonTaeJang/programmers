@@ -15,7 +15,7 @@ function solution(name) {
             nextIndex++;
         }
 
-        // 조이스틱 좌우 제어
+        // 조이스틱 좌우 count
         min = Math.min(min, (i*2) + name.length - nextIndex);   // 우측 -> 좌측
         min = Math.min(min, ((name.length - nextIndex)*2) + i); // 좌측 -> 우측
     }
@@ -23,7 +23,7 @@ function solution(name) {
     return answer + min;
 }
 
-// 조이스틱 위 아래 제어
+// 조이스틱 위 아래 count
 function getAlphabetCnt(apb){
     let A = 65;
     let char = apb.charCodeAt(0);
