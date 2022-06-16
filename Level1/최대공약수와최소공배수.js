@@ -21,7 +21,7 @@ function solution(n, m) {
     // 최소공배수
     answer.push(answer[0] * twoNum[0] * twoNum[1]);
 
-    console.log(answer);
+    //console.log(answer);
     
     return answer;
 }
