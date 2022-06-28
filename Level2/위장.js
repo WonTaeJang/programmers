@@ -17,7 +17,7 @@ function solution(clothes) {
     })
 
     list.forEach(e=>{
-
+        answer = answer*(e.length+1);
     })
 
     
