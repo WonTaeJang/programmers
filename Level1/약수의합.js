@@ -15,10 +15,10 @@ function solution(n) {
     answer = [...measureArr].reduce((acc, cur, idx) =>{
         return acc += cur;
     },0)
-    console.log(answer)
+    //console.log(answer)
 
     return answer;
 }
 
 solution(12)        // 28
-solution(9)        // 6
+solution(9)        // 13
