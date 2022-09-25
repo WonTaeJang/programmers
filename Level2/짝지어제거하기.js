@@ -17,9 +17,9 @@ function solution(s)
 
     }
 
-    console.log(arrStack);
+    //console.log(arrStack);
 
-    return 1;
+    return arrStack.length == 0? 1 : 0;
 }
 
 solution('baabaa');
